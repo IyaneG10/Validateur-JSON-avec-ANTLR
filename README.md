@@ -91,7 +91,8 @@ Cependant, ayant effectué les tests avec un nombre de fichier limité, je ne po
 garantir son efficacité.
 
 
-**Figure 1 : arbre syntaxique**
+[<img src="antlr4_parse_tree.png" width="500">](antlr4_parse_tree.png)
+
 
 ### 3.3 Manquements
 
