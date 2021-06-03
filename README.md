@@ -31,12 +31,9 @@ analyses lexicale et syntaxique grâce à l’outils ANTLR.
 
 Le travail à réaliser est le suivant:
 
-- Définir les éléments lexicaux et syntaxiques qui permettent de vérifier qu’un
-    fichier vérifie la syntaxe JSON
+- Définir les éléments lexicaux et syntaxiques qui permettent de vérifier qu’un fichier vérifie la syntaxe JSON
 - Implémenter ces éléments avec ANTLR et obtenir l’arbre syntaxique abstrait (AST)
-- Effectuer en Java les opérations nécessaires sur l’AST de manière à le convertir en
-    un autre format de fichier. Dans un premier temps, vous ferez une conversion en
-    YAML, s’il vous reste du temps vous ferez la conversion en XML
+- Effectuer en Java les opérations nécessaires sur l’AST de manière à le convertir en un autre format de fichier. Dans un premier temps, vous ferez une conversion en YAML, s’il vous reste du temps vous ferez la conversion en XML
 
 ### 2.2 Le format JSON
 
@@ -46,27 +43,25 @@ structurée tout en étant lisible par un humain. Sa syntaxe est réduite et non
 et comprend:
 
 - {...} : les accolades définissent un objet.
-- "lexer" : "ANTLR" : Les guillemets (double-quotes) et les double-points définissent
-    un couple clé/valeur (on parle de membre).
+- "lexer" : "ANTLR" : Les guillemets (double-quotes) et les double-points définissent un couple clé/valeur (on parle de membre).
 - [...] : Les crochets définissent un tableau.
-- Les virgules permettent de séparer les membres d’un tableau ou d’un objet
-    comme dans l’exemple suivant.
-**{**
-"menu" **: {**
+- Les virgules permettent de séparer les membres d’un tableau ou d’un objet comme dans l’exemple suivant:
 
-
-"id" **:** "file" **,**
-"value" **:** "File" **,**
-"popup" **: {**
-"menuitem" **: [
-{** "value" **:** "New" **,** "onclick" **:** "CreateNewDoc()" **},
-{** "value" **:** "Open" **,** "onclick" **:** "OpenDoc()" **},
-{** "value" **:** "Close" **,** "onclick" **:** "CloseDoc()" **}
-]
+ ```
+{
+    "menu": {
+        "id": "file",
+        "value": "File",
+        "popup": {
+        "menuitem": [
+            { "value": "New", "onclick": "CreateNewDoc()" },
+            { "value": "Open", "onclick": "OpenDoc()" },
+            { "value": "Close", "onclick": "CloseDoc()" }
+        ]
+        }
+    }
 }
-}
-}**
-
+ ```
 ## 3. Réalisations
 
 ### 3.1 Démarche
@@ -91,7 +86,8 @@ Cependant, ayant effectué les tests avec un nombre de fichier limité, je ne po
 garantir son efficacité.
 
 
-[<img src="antlr4_parse_tree.png" width="500">](Arbre syntaxique)
+[<img src="antlr4_parse_tree.png" width="500">](antlr4_parse_tree.png)
+Fig1: Arbre syntaxique
 
 
 ### 3.3 Manquements
